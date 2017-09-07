@@ -16,6 +16,7 @@
 package com.melizeche.dolarpy.core;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -24,10 +25,14 @@ import java.util.Date;
  */
 public interface ProviderInterface {
 
+    public String getName();
+
+    public void setName(String name);
+
     /**
      * Retrieves buy rate from the provider
-     * 
-     * @return BigDecimal 
+     *
+     * @return BigDecimal
      */
     public BigDecimal getCompra();
 
@@ -37,8 +42,7 @@ public interface ProviderInterface {
 
     public void setVenta(BigDecimal venta);
 
-//    public Date getUpdated();
-//
-//    public void setUpdated(Date updated);
+    public LocalDateTime getUpdated();
 
+    public void setUpdated(LocalDateTime updated);
 }

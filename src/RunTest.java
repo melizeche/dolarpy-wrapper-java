@@ -1,10 +1,8 @@
+
+import com.melizeche.dolarpy.core.DolarPy;
 import com.melizeche.dolarpy.core.Provider;
-import com.melizeche.dolarpy.core.ProviderRef;
-import com.melizeche.dolarpy.core.Main;
-
-import java.math.BigDecimal;
-
-
+import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -14,11 +12,19 @@ public class RunTest {
 
     public static void main(String[] args) {
 
-        Main dolar = new Main();
-        
-      
-        System.out.println(dolar.getRaw());
-          System.out.println(dolar.getProviders());
-        System.out.println("DDDDD");
+        DolarPy dolar = new DolarPy();
+
+//        System.out.println(dolar.getRaw());
+//        System.out.println(dolar.getProviders());
+//        System.out.println("DDDDD");
+//        System.out.println(dolar.get("amambay"));
+//        System.out.println(dolar.get());
+//        List<Provider> all = dolar.getAll();
+//        System.out.println(all.get(0));
+        HashMap all = dolar.getAll();
+        System.out.println(all);
+        System.out.println(all.getClass());
+        System.out.println(all.get("bcp"));
+        System.out.println(dolar.getProvidersList());
     }
 }

@@ -2,13 +2,13 @@ package com.melizeche.dolarpy.core;
 
 import java.math.BigDecimal;
 
-
 /**
  *
  * @author Marcelo Elizeche Landó <melizeche@gmail.com>
  */
 public class ProviderRef extends Provider {
-    private BigDecimal referencial;
+
+    private BigDecimal referencial = null;
 
     @Override
     public String toString() {
@@ -22,5 +22,5 @@ public class ProviderRef extends Provider {
     public void setReferencial(BigDecimal referencial) {
         this.referencial = referencial;
     }
-    
+
 }
