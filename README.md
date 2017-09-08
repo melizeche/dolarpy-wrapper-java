@@ -24,7 +24,7 @@ getCompra("cambioschaco") // Returns BigDecimal buy value from cambioschaco
 ## Requirements
 
 - Java 8
-- Gson
+- Gson 2.8.1
 
 
 ## Contributing

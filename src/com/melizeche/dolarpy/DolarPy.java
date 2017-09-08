@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.melizeche.dolarpy.core;
+package com.melizeche.dolarpy;
 
 import com.melizeche.dolarpy.services.FetchService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.melizeche.dolarpy.core.Provider;
 import com.melizeche.dolarpy.settings.Settings;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
@@ -36,9 +37,8 @@ import java.util.Map;
  */
 public class DolarPy {
 
-    private FetchService httpservice = new FetchService();
+    private final FetchService httpservice = new FetchService();
 
-    //private Gson gson = new GsonB
     public String getRaw() {
         return httpservice.executeGetRequest();
     }
@@ -114,21 +114,24 @@ public class DolarPy {
     }
 
     public HashMap<String, Provider> getAll() {
-        return buildProviders();//buildProvider(name);
+        return buildProviders();
     }
 
     public BigDecimal getCompra(String provider) {
         Provider p = get(provider);
         return p.getCompra();
     }
+
     public BigDecimal getCompra() {
         Provider p = get(Settings.DEFAULT_PROVIDER);
         return p.getCompra();
     }
+
     public BigDecimal getVenta(String provider) {
         Provider p = get(provider);
         return p.getVenta();
     }
+
     public BigDecimal getVenta() {
         Provider p = get(Settings.DEFAULT_PROVIDER);
         return p.getVenta();
