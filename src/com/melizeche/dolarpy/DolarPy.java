@@ -15,11 +15,11 @@
  */
 package com.melizeche.dolarpy;
 
-import com.melizeche.dolarpy.services.FetchService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.melizeche.dolarpy.core.Provider;
+import com.melizeche.dolarpy.services.FetchService;
 import com.melizeche.dolarpy.settings.Settings;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;

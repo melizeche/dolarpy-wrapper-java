@@ -18,9 +18,28 @@ DolarPy dolar = new DolarPy();
 dolar.getProvidersList() // 'bcp', 'maxicambios', 'cambioschaco', etc...
 dolar.get() // Returns a Provider Object. default: BCP
 dolar.get("maxicambios") // Returns Provider: maxicambios Object
+dolar.get("maxicambios").getVenta() //Returns BigDecimal buy value from cambioschaco
 dolar.getCompra() // Returns BigDecimal buy value from defaul Provider(bcp)
 dolar.getCompra("cambioschaco") // Returns BigDecimal buy value from cambioschaco
+dolar.getVenta("amabay") // Returns BigDecimal sell value from Amambay
+dolar.get().getUpdated() // Returns LocalDateTime timestamp
+```
 
+## Provider Object properties and methods
+```java
+    private String name;
+    private BigDecimal compra;
+    private BigDecimal venta;
+    private LocalDateTime updated;
+
+    public String getName();
+    public void setName(String name);
+    public BigDecimal getCompra();
+    public void setCompra(BigDecimal compra);
+    public BigDecimal getVenta();
+    public void setVenta(BigDecimal venta);
+    public LocalDateTime getUpdated();
+    public void setUpdated(LocalDateTime updated);
 ```
 
 ## Requirements
