@@ -11,13 +11,15 @@ TODO
 
 ## Usage
 ```java
-import com.melizeche.dolarpy.core.DolarPy
+import com.melizeche.dolarpy.DolarPy
 
-getProvidersList() // 'bcp', 'maxicambios', 'cambioschaco', etc...
-get() // Returns a Provider Object. default: BCP
-get("maxicambios") // Returns Provider: maxicambios Object
-getCompra() // Returns BigDecimal buy value from defaul Provider(bcp)
-getCompra("cambioschaco") // Returns BigDecimal buy value from cambioschaco
+DolarPy dolar = new DolarPy();
+
+dolar.getProvidersList() // 'bcp', 'maxicambios', 'cambioschaco', etc...
+dolar.get() // Returns a Provider Object. default: BCP
+dolar.get("maxicambios") // Returns Provider: maxicambios Object
+dolar.getCompra() // Returns BigDecimal buy value from defaul Provider(bcp)
+dolar.getCompra("cambioschaco") // Returns BigDecimal buy value from cambioschaco
 
 ```
 
