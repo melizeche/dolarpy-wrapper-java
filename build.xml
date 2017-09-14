@@ -11,14 +11,14 @@
     <description>Builds, tests, and runs the project DolarPyJava.</description>
     <import file="nbproject/build-impl.xml"/>
     <target name="-pre-init">
-        <property file="version.properties"/>
+        <property file="nbproject/version.properties"/>
         <property name="dist.jar" value="dist/${ant.project.name}-${project.version}.jar"/>
     </target>
 
     <target name="package_for_release" depends="jar,javadoc">
         <mkdir dir="build/release"/>
         <copy file="${dist.jar}" todir="build/release/"/>
-        <copy file="licence.txt" todir="build/release/"/>
+        <copy file="LICENSE" todir="build/release/"/>
         <mkdir dir="build/release/doc"/>
         <copy todir="build/release/doc">
             <fileset dir="dist/javadoc" includes="**"/>
@@ -33,6 +33,13 @@
         </copy>
         <zip basedir="build/release/" includes="**" destfile="dist/${ant.project.name}-${project.version}.zip"/>
     </target>
+    <target description="bundle sources in a jar" name="package-sources">
+        <property file="nbproject/version.properties"/>
+  <jar basedir="src" destfile="dist/${ant.project.name}-${project.version}-sources.jar"/>
+</target>
+<target depends="-javadoc-build" description="bundle javadoc in a jar" name="package-doc">
+  <jar basedir="dist/javadoc" destfile="dist/${ant.project.name}-${project.version}-javadoc.jar"/>
+</target>
     <!--
 
     There exist several targets which are by default empty and which can be 

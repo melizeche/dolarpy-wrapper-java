@@ -136,7 +136,7 @@ public class DolarPy {
      * Returns the buy value of selected provider, if none is given it will use
      * the default provider
      *
-     * @param provider
+     * @param provider String with the provider name
      * @return BigDecimal
      */
     public BigDecimal getCompra(String provider) {
@@ -153,7 +153,7 @@ public class DolarPy {
      * Returns the sell value of selected provider, if none is given it will use
      * the default provider
      *
-     * @param provider
+     * @param provider String with the provider name
      * @return BigDecimal
      */
     public BigDecimal getVenta(String provider) {
