@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Marcelo Elizeche Landó <melizeche@gmail.com>.
+ * Copyright 2017 Marcelo Elizeche Landó [melizeche@gmail.com].
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import java.util.Date;
 
 /**
  *
- * @author Marcelo Elizeche Landó <melizeche@gmail.com>
+ * @author Marcelo Elizeche Landó [melizeche@gmail.com]
  */
 public interface ProviderInterface {
 

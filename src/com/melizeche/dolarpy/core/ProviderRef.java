@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author Marcelo Elizeche Landó <melizeche@gmail.com>
+ * @author Marcelo Elizeche Landó [melizeche@gmail.com]
  */
 public class ProviderRef extends Provider {
 

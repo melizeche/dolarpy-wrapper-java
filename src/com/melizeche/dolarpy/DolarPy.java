@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Marcelo Elizeche Landó <melizeche@gmail.com>.
+ * Copyright 2017 Marcelo Elizeche Landó [melizeche@gmail.com].
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +33,17 @@ import java.util.Map;
 
 /**
  *
- * @author Marcelo Elizeche Landó <melizeche@gmail.com>
+ * @author Marcelo Elizeche Landó [melizeche@gmail.com]
  */
 public class DolarPy {
 
     private final FetchService httpservice = new FetchService();
 
+    /**
+     * Returns the raw content of the DolarPy API
+     *
+     * @return String
+     */
     public String getRaw() {
         return httpservice.executeGetRequest();
     }
@@ -53,6 +58,11 @@ public class DolarPy {
 
     }
 
+    /**
+     * Get list of available providers in a ArrayList of String
+     *
+     * @return ArrayList
+     */
     public ArrayList<String> getProvidersList() {
         HashMap map = buildProviders();
         ArrayList<String> providers = new ArrayList<>();
@@ -113,10 +123,22 @@ public class DolarPy {
         return buildProvider(Settings.DEFAULT_PROVIDER);
     }
 
+    /**
+     * Returns Hashmap of all providers
+     *
+     * @return HashMap
+     */
     public HashMap<String, Provider> getAll() {
         return buildProviders();
     }
 
+    /**
+     * Returns the buy value of selected provider, if none is given it will use
+     * the default provider
+     *
+     * @param provider
+     * @return BigDecimal
+     */
     public BigDecimal getCompra(String provider) {
         Provider p = get(provider);
         return p.getCompra();
@@ -127,6 +149,13 @@ public class DolarPy {
         return p.getCompra();
     }
 
+    /**
+     * Returns the sell value of selected provider, if none is given it will use
+     * the default provider
+     *
+     * @param provider
+     * @return BigDecimal
+     */
     public BigDecimal getVenta(String provider) {
         Provider p = get(provider);
         return p.getVenta();

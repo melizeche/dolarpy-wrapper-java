@@ -7,9 +7,32 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="dolarpy-wrapper-java" default="default" basedir=".">
-    <description>Builds, tests, and runs the project dolarpy-wrapper-java.</description>
+<project name="DolarPyJava" default="default" basedir=".">
+    <description>Builds, tests, and runs the project DolarPyJava.</description>
     <import file="nbproject/build-impl.xml"/>
+    <target name="-pre-init">
+        <property file="version.properties"/>
+        <property name="dist.jar" value="dist/${ant.project.name}-${project.version}.jar"/>
+    </target>
+
+    <target name="package_for_release" depends="jar,javadoc">
+        <mkdir dir="build/release"/>
+        <copy file="${dist.jar}" todir="build/release/"/>
+        <copy file="licence.txt" todir="build/release/"/>
+        <mkdir dir="build/release/doc"/>
+        <copy todir="build/release/doc">
+            <fileset dir="dist/javadoc" includes="**"/>
+        </copy>
+        <mkdir dir="build/release/src"/>
+        <copy todir="build/release/src">
+            <fileset dir="src" includes="**"/>
+        </copy>
+        <mkdir dir="build/release/test"/>
+        <copy todir="build/release/test">
+            <fileset dir="test" includes="**"/>
+        </copy>
+        <zip basedir="build/release/" includes="**" destfile="dist/${ant.project.name}-${project.version}.zip"/>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -58,7 +81,7 @@
 
     An example of overriding the target for project execution could look like this:
 
-        <target name="run" depends="dolarpy-wrapper-java-impl.jar">
+        <target name="run" depends="DolarPyJava-impl.jar">
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>

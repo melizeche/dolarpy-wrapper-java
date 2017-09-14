@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *
- * @author Marcelo Elizeche Landó <melizeche@gmail.com>
+ * @author Marcelo Elizeche Landó [melizeche@gmail.com]
  */
 public class Provider implements ProviderInterface {
 
